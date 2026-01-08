@@ -10,6 +10,12 @@ export const getForms: () => Promise<Form[]> = () => {
                 description: { label: 'Description', type: 'textarea', attrs: { rows: 4, placeholder: 'Description...' } },
                 privacy: { label: 'Privacy', type: 'select', options: [{ value: 'public', label: 'Public' }, { value: 'private', label: 'Private' }] },
                 subscribe: { label: 'Subscribe', type: 'checkbox' },
+            },
+            initialValues: {
+                title: 'blah',
+                description: 'blah-blah',
+                privacy: 'public',
+                subscribe: true
             }
         }
     ]))

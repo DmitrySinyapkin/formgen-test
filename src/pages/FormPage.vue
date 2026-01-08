@@ -4,6 +4,7 @@
     import { useRoute, useRouter } from 'vue-router';
     import FormGen from '@/components/Form/FormGen/FormGen.vue';
     import type { FormData } from '@/types/form';
+    import { getInitialValues } from '@/utils/form';
 
     const store = useStore()
     const route = useRoute()
@@ -11,7 +12,7 @@
 
     const form = computed(() => store.getters['forms/getFormById'](Number(route.params.formId)))
 
-    const formData = ref<FormData>({})
+    const formData = ref<FormData>(getInitialValues(form.value))
 
     const handleSubmit = () => {
         console.log(formData.value)
