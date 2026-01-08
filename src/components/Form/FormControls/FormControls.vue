@@ -31,6 +31,7 @@
         display: flex;
         justify-content: center;
         gap: 8px;
+        padding-top: 16px;
 
         &__button {
             width: 140px;

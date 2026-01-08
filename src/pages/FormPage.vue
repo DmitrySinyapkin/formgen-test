@@ -24,7 +24,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="form">
         <h3>{{ form.title }}</h3>
         <FormGen
             :fields="form.fields"
@@ -34,3 +34,21 @@
         />
     </div>
 </template>
+
+<style lang="scss" scoped>
+    .form {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+</style>

@@ -6,7 +6,18 @@
 </script>
 
 <template>
-  <RouterView />
+  <main class="main">
+    <RouterView />
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .main {
+    min-height: 100vh;
+    background: #aaaaaa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

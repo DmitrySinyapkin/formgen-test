@@ -19,16 +19,18 @@
 
 <template>
     <form class="form" @submit.prevent="handleSubmit">
-        <FormField
-            v-for="(field, name) in fields"
-            :key="name"
-            :name="name"
-            :type="field.type"
-            :label="field.label"
-            :attrs="field.attrs"
-            :options="field.options"
-            v-model="modelValue![name]"
-        />
+        <div class="fields">
+            <FormField
+                v-for="(field, name) in fields"
+                :key="name"
+                :name="name"
+                :type="field.type"
+                :label="field.label"
+                :attrs="field.attrs"
+                :options="field.options"
+                v-model="modelValue![name]"
+            />
+        </div>
         <FormControls @cancel="handleCancel"/>
     </form>
 </template>
@@ -43,5 +45,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .fields {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
     }
 </style>
