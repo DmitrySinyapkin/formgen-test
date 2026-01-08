@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import type { Props } from '@/components/Form/FormField/types';
+    import type { Props } from '../TextComponents/types'; 
 
     const {
         name,

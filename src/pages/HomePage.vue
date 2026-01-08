@@ -5,8 +5,6 @@
     const store = useStore()
 
     const forms = computed(() => store.state.forms.forms)
-
-    store.dispatch('forms/getForms')
 </script>
 
 <template>
