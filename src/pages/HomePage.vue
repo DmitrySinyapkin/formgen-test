@@ -12,9 +12,8 @@
         <h1>FormGen App</h1>
         <div class="forms">
             <h3>Forms:</h3>
-            <div>
-                <RouterLink v-for="form in forms" :key="form.id" :to="`/forms/${form.id}`">{{ form.title }}</RouterLink>
-            </div>
+            <RouterLink :to="`/forms/${forms[0].id}`">{{ forms[0].title }}</RouterLink>
+            <RouterLink :to="`/custom-forms/${forms[1].id}`">{{ forms[1].title }}</RouterLink>
         </div>
     </div>
 </template>
@@ -46,6 +45,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 0.5rem;
         }
     }

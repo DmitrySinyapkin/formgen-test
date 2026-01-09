@@ -15,21 +15,36 @@
     const handleCancel = () => {
         emit('cancel')
     }
+
+    const updateValue = (name: string, value: string | boolean) => {
+        if (modelValue.value) {
+            modelValue.value[name] = value
+        }
+    }
 </script>
 
 <template>
     <form class="form" @submit.prevent="handleSubmit">
         <div class="fields">
-            <FormField
+            <slot
                 v-for="(field, name) in fields"
                 :key="name"
                 :name="name"
-                :type="field.type"
-                :label="field.label"
                 :attrs="field.attrs"
                 :options="field.options"
-                v-model="modelValue![name]"
-            />
+                :model-value="modelValue![name]"
+                :update-model-value="(value: string | boolean) => updateValue(name, value)"
+            >
+                <FormField
+
+                    :name="name"
+                    :type="field.type"
+                    :label="field.label"
+                    :attrs="field.attrs"
+                    :options="field.options"
+                    v-model="modelValue![name]"
+                />
+            </slot>
         </div>
         <FormControls @cancel="handleCancel"/>
     </form>

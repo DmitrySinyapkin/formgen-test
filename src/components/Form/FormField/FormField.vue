@@ -16,17 +16,12 @@
 </script>
 
 <template>
-    <slot
+    <component
+        :is="component"
+        :label="label"
         :name="name"
+        :attrs="attrs"
         :options="options"
-    >
-        <component
-            :is="component"
-            :label="label"
-            :name="name"
-            :attrs="attrs"
-            :options="options"
-            v-model="modelValue"
-        />
-    </slot>
+        v-model="modelValue"
+    />
 </template>

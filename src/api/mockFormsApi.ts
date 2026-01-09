@@ -17,6 +17,15 @@ export const getForms: () => Promise<Form[]> = () => {
                 privacy: 'public',
                 subscribe: true
             }
-        }
+        },
+        {
+            id: 2,
+            title: 'Form 2 with custom fields (PrimeVue)',
+            fields: {
+                email: { label: 'Email', type: 'input', attrs: { placeholder: 'Email' } },
+                password: { label: 'Password', type: 'input', attrs: { placeholder: 'Password' } },
+                remember: { label: 'Remember Me', type: 'checkbox' }
+            }
+        },
     ]))
 }

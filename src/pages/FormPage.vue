@@ -31,7 +31,8 @@
             v-model="formData"
             @submit="handleSubmit"
             @cancel="handleCancel"
-        />
+        >
+        </FormGen>
     </div>
 </template>
 
