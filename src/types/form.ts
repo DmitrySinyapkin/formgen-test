@@ -27,3 +27,8 @@ export interface Form {
     fields: FormFields
     initialValues?: FormData
 }
+
+export interface DataRecord {
+    id: number
+    data: FormData
+}

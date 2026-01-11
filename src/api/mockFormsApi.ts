@@ -1,4 +1,5 @@
-import type { Form } from "@/types/form"
+import type { Form, DataRecord } from "@/types/form"
+import { SAVED_DATA_LS_KEY } from "@/constants/storage"
 
 export const getForms: () => Promise<Form[]> = () => {
     return new Promise(resolve => resolve([
@@ -28,4 +29,18 @@ export const getForms: () => Promise<Form[]> = () => {
             }
         },
     ]))
+}
+
+export const getSavedData: () => Promise<DataRecord[]> = () => {
+    return new Promise(resolve => {
+        const data = localStorage.getItem(SAVED_DATA_LS_KEY) ? JSON.parse(localStorage.getItem(SAVED_DATA_LS_KEY)) : []
+        resolve(data)
+    })
+}
+
+export const saveData: (data: DataRecord[]) => Promise<string>  = (data) => {
+    return new Promise(resolve => {
+        localStorage.setItem(SAVED_DATA_LS_KEY, JSON.stringify(data))
+        resolve('success')
+    })
 }

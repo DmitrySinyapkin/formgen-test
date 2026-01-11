@@ -3,6 +3,7 @@
 
   const store = useStore()
   store.dispatch('forms/getForms')
+  store.dispatch('data/getSavedData')
 </script>
 
 <template>

@@ -15,6 +15,11 @@
             <RouterLink :to="`/forms/${forms[0].id}`">{{ forms[0].title }}</RouterLink>
             <RouterLink :to="`/custom-forms/${forms[1].id}`">{{ forms[1].title }}</RouterLink>
         </div>
+        <div class="forms">
+            <h3>Saved data:</h3>
+            <RouterLink :to="`/data/${forms[0].id}`">{{ forms[0].title }}</RouterLink>
+            <RouterLink :to="`/data/${forms[1].id}`">{{ forms[1].title }}</RouterLink>
+        </div>
     </div>
 </template>
 

@@ -10,12 +10,17 @@
     const route = useRoute()
     const router = useRouter()
 
-    const form = computed(() => store.getters['forms/getFormById'](Number(route.params.formId)))
+    const formId = Number(route.params.formId)
+    const form = computed(() => store.getters['forms/getFormById'](formId))
 
     const formData = ref<FormData>(getInitialValues(form.value))
 
-    const handleSubmit = () => {
-        console.log(formData.value)
+    const handleSubmit = async () => {
+        const status = await store.dispatch('data/addDataRecord', { id: formId, data: formData.value })
+
+        if (status === 'success') {
+            router.push(`/data/${formId}`)
+        }
     }
 
     const handleCancel = () => {

@@ -1,0 +1,1 @@
+export const SAVED_DATA_LS_KEY = 'saved_data'

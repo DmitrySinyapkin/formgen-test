@@ -36,7 +36,6 @@
                 :update-model-value="(value: string | boolean) => updateValue(name, value)"
             >
                 <FormField
-
                     :name="name"
                     :type="field.type"
                     :label="field.label"
