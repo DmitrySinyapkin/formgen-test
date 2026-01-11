@@ -3,5 +3,5 @@ import type { DataGetters, DataState } from "./types"
 
 export const getters: GetterTree<DataState, DataState> & DataGetters = {
     getDataByFormId: (state: DataState) => (id: number) =>
-        state.data.filter(record => record.id === id)
+        state.data.filter(record => record.formId === id)
 }

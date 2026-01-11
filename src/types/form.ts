@@ -29,6 +29,6 @@ export interface Form {
 }
 
 export interface DataRecord {
-    id: number
+    formId: number
     data: FormData
 }
